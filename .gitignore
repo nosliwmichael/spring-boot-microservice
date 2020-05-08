@@ -1,5 +1,3 @@
-/**/.settings
-/**/.project
 target/
 pom.xml.tag
 pom.xml.releaseBackup
@@ -11,3 +9,14 @@ buildNumber.properties
 .mvn/timing.properties
 # https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
+
+# IntelliJ Project Files 
+*.iml
+*.iws
+*.ipr
+.idea/
+
+# Eclipse Project Files 
+.settings/
+.classpath
+.project
