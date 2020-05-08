@@ -1,0 +1,12 @@
+app:
+  name: "user-api"
+
+server:
+  servlet:
+    context-path: /${app.name}
+
+spring:
+  application:
+    name: ${app.name}
+  main:
+    banner-mode: "off"
