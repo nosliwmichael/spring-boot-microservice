@@ -10,8 +10,12 @@
 	</parent>
 	
 	<artifactId>user-provider</artifactId>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<name>user-provider</name>
+	
+	<properties>
+		<failOnMissingWebXml>false</failOnMissingWebXml>
+	</properties>
 
 	<dependencies>
 		<!-- USER -->
