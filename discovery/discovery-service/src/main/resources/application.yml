@@ -1,0 +1,12 @@
+app:
+  name: "discovery-service"
+
+server:
+  servlet:
+    context-path: /${app.name}
+
+spring:
+  application:
+    name: ${app.name}
+  main:
+    banner-mode: "off"
