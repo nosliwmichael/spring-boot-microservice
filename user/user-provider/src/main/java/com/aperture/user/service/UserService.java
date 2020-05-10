@@ -1,10 +1,10 @@
-package com.aperture.user.provider.service;
+package com.aperture.user.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.aperture.user. provider.dao.UserDao;
-import com.aperture.user.provider.entity.UserImpl;
+import com.aperture.user.dao.UserDao;
+import com.aperture.user.entity.UserImpl;
 
 @Service
 public class UserService {

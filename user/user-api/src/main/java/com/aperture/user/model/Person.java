@@ -1,4 +1,4 @@
-package com.aperture.user.api.model;
+package com.aperture.user.model;
 
 public interface Person {
 

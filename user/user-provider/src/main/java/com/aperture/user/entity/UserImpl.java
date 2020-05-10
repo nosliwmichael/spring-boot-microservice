@@ -1,6 +1,6 @@
-package com.aperture.user.provider.entity;
+package com.aperture.user.entity;
 
-import com.aperture.user.api.model.User;
+import com.aperture.user.model.User;
 
 public class UserImpl implements User {
 	
@@ -8,6 +8,7 @@ public class UserImpl implements User {
 	private String name;
 	private Integer age;
 	
+	public UserImpl() {}
 	public UserImpl(Long userId, String name, Integer age) {
 		super();
 		this.userId = userId;
@@ -15,6 +16,7 @@ public class UserImpl implements User {
 		this.age = age;
 	}
 
+	@Override
 	public Long getUserId() {
 		return userId;
 	}
@@ -23,6 +25,7 @@ public class UserImpl implements User {
 		this.userId = userId;
 	}
 
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -31,6 +34,7 @@ public class UserImpl implements User {
 		this.name = name;
 	}
 
+	@Override
 	public Integer getAge() {
 		return age;
 	}

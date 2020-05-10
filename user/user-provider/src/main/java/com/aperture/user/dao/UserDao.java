@@ -1,8 +1,8 @@
-package com.aperture.user.provider.dao;
+package com.aperture.user.dao;
 
 import org.springframework.stereotype.Repository;
 
-import com.aperture.user.provider.entity.UserImpl;
+import com.aperture.user.entity.UserImpl;
 
 @Repository
 public class UserDao {

@@ -1,11 +1,11 @@
-package com.aperture.user.provider.controller;
+package com.aperture.user.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.aperture.user.api.endpoint.UserEndpoint;
-import com.aperture.user.api.model.User;
-import com.aperture.user.provider.service.UserService;
+import com.aperture.user.endpoint.UserEndpoint;
+import com.aperture.user.model.User;
+import com.aperture.user.service.UserService;
 
 @RestController
 public class UserController implements UserEndpoint {
