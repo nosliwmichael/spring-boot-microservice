@@ -1,0 +1,18 @@
+app:
+  name: "user-provider"
+
+spring:
+  application:
+    name: ${app.name}
+  main:
+    banner-mode: "off"
+
+eureka:
+  instance:
+    hostname: localhost
+    instanceId: ${app.name}-${random.value}
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8080/eureka/
