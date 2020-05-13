@@ -1,19 +1,18 @@
+app:
+  name: "user-provider"
+
 spring:
   application:
-    name: "user"
+    name: ${app.name}
   main:
     banner-mode: "off"
 
----
-spring:
-  profiles: local, dev
-  cloud:
-    config:
-      uri: http://localhost:8080
-
----
-spring:
-  profiles: prod
-  cloud:
-    config:
-      uri: ${config.server.url}
+eureka:
+  instance:
+    hostname: localhost
+    instanceId: ${app.name}-${random.value}
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8080/eureka/

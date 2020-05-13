@@ -8,7 +8,7 @@ import com.aperture.user.entity.UserImpl;
 public class UserDao {
 
 	public UserImpl getUserById(Long userId) {
-		return new UserImpl(1L, "Michael Wilson", 28);
+		return new UserImpl(1L, "Michael Wilson", 26);
 	}
 	
 }
