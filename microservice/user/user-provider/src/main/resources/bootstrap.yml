@@ -1,6 +1,6 @@
 spring:
   application:
-    name: "user"
+    name: "user-api"
   main:
     banner-mode: "off"
 
