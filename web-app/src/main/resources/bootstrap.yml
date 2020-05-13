@@ -1,12 +1,12 @@
 spring:
   application:
-    name: "user-api"
+    name: "aperture"
   main:
     banner-mode: "off"
 
 ---
 spring:
-  profiles: local, dev
+  profiless: local, dev
   cloud:
     config:
       uri: http://localhost:8080
