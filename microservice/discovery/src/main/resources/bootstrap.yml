@@ -1,6 +1,6 @@
 spring:
   application:
-    name: "user"
+    name: "discovery"
   main:
     banner-mode: "off"
 

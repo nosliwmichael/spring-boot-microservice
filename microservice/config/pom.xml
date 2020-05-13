@@ -2,32 +2,20 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
+
 	<parent>
 		<groupId>com.aperture</groupId>
 		<artifactId>microservice</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	
-	<artifactId>gateway</artifactId>
-	<name>gateway</name>
-	<packaging>jar</packaging>
-	
+
+	<artifactId>config</artifactId>
+	<name>config</name>
+
 	<dependencies>
-		<!-- SPRING CLOUD -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-gateway</artifactId>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
 	</dependencies>
 
@@ -37,8 +25,8 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>com.aperture.gateway.GatewayApplication</mainClass>
-					<addResources>false</addResources>
+					<mainClass>com.aperture.config.ConfigApplication</mainClass>
+					<addResources>true</addResources>
 				</configuration>
 				<executions>
 					<execution>
@@ -50,5 +38,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	
+
 </project>
