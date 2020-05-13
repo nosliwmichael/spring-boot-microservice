@@ -4,5 +4,5 @@ import org.springframework.cloud.openfeign.FeignClient;
 
 import com.aperture.user.endpoint.UserEndpoint;
 
-@FeignClient("user-provider")
+@FeignClient(name = "user-api", url = "${gateway.endpoint}")
 public interface UserClient extends UserEndpoint {}
