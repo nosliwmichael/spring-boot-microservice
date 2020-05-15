@@ -42,6 +42,11 @@
         });
     }
 
+    /**
+     * Create a <code>{{ response }}</code> element to place on the page.
+     * @param {string} response 
+     * @param {Element} container 
+     */
     function populateContainer(response, container) {
         let codeNode = document.createElement('code');
         let textNode = document.createTextNode(response);
