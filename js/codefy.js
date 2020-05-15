@@ -43,15 +43,13 @@
     }
 
     /**
-     * Create a <code>{{ response }}</code> element to place on the page.
+     * Create a text node to place in the container.
      * @param {string} response 
      * @param {Element} container 
      */
     function populateContainer(response, container) {
-        let codeNode = document.createElement('code');
         let textNode = document.createTextNode(response);
-        codeNode.appendChild(textNode);
-        container.appendChild(codeNode);
+        container.appendChild(textNode);
     }
 
 })();
