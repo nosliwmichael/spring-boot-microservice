@@ -11,7 +11,7 @@ permalink: /documentation/
 
     {% for project in top_level_projects %}
         <h4>
-            <a href="{{ project.display_name | prepend: 'repo_projects/' | relative_url }}">{{ project.display_name | downcase }}</a>
+            <a href="{{ project.display_name | downcase | prepend: 'repo_projects/' | relative_url }}">{{ project.display_name }}</a>
         </h4>
 
         {% if project.description %}
