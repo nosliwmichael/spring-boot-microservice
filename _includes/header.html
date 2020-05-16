@@ -29,11 +29,11 @@
             </section>
           {% endif %}
 
-          <a class="nav-links" href="/">Home</a>
-          <a class="nav-links" href="/getting-started/">Getting Started</a>
-          <a class="nav-links" href="/documentation/">Documentation</a>
+          <a class="nav-links" href="{{ '/' | relative_url }}">Home</a>
+          <a class="nav-links" href="{{ '/getting-started/' | relative_url }}">Getting Started</a>
+          <a class="nav-links" href="{{ '/documentation/' | relative_url }}">Documentation</a>
 
-          <link rel="stylesheet" href="/css/main.css"/>
+          <link rel="stylesheet" href="{{ '/css/main.css' | relative_url }}"/>
           
         </header>
     </div>

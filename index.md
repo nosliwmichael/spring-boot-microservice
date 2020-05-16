@@ -11,7 +11,7 @@ display_name: Home
 1. You have basic knowledge of web development.
 2. You are familiar with Git, Java (Spring), and Maven.
 
-Continue reading to get a better understanding of the project's structure or visit [Getting Started](/getting-started) to begin setting up the project locally.
+Continue reading to get a better understanding of the project's structure or visit [Getting Started]({{ '/getting-started' | relative_url }}) to begin setting up the project locally.
 
 ## Understanding the Project Structure
 

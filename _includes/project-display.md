@@ -1,5 +1,5 @@
 {% if page.parent_name %}
-##### [Return to {{ page.parent_name }}](/repo_projects/{{ page.parent_name }}/)
+##### [Return to {{ page.parent_name }}]( {{ '/repo_projects/' | append: page.parent_name '/' | relative_url}})
 {% else %}
 ##### [Return to Documentation](/documentation/)
 {% endif %}
