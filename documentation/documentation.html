@@ -1,0 +1,26 @@
+---
+layout: documentation
+title: Aperture
+permalink: /documentation/
+---
+
+<h1>Documentation</h1>
+
+<section id="docContainer">
+    {% assign top_level_projects = site.repo_projects | where: "level", "top" %}
+
+    {% for project in top_level_projects %}
+        <h4>
+            <a href="{{ project.display_name | prepend: 'repo_projects/' | relative_url }}">{{ project.display_name }}</a>
+        </h4>
+
+        {% if project.description %}
+            <span>{{ project.description }}</span>
+        {% endif %}
+
+    {% endfor %}
+</section>
+
+<!-- <pre class="prettyprint" data-codefy="{{ site.aperture.raw-url | append: page.repo.current_files[0] }}"></pre>
+<script src="{{ '/js/codefy.js' | relative_url }}"></script>
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=css&amp;skin=default"></script> -->

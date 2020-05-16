@@ -20,3 +20,9 @@ buildNumber.properties
 .settings/
 .classpath
 .project
+
+# Ruby Files
+Gemfile
+Gemfile.lock
+_site
+.sass-cache

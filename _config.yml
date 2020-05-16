@@ -1,3 +1,14 @@
 title: Aperture
 description: A look at the microservice architecture
 theme: jekyll-theme-slate
+
+collections_dir: collections
+collections:
+  repo_projects:
+    output: true
+  posts:
+  getting-started:
+    output: true
+    
+aperture:
+  raw-url: https://raw.githubusercontent.com/nosliwmichael/aperture/master/
