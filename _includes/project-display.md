@@ -13,8 +13,11 @@
 ### Files
 
 {% for file in page.files %}
-
-[{{ file }}]({{ site.aperture.raw-url }}{{ file }})
+{% if file.path %}
+[{{ file.name }}]({{ site.aperture.raw-url }}{{ page.app_path | append: file.path | append: file.name }})
+{% else %}
+[{{ file.name }}]({{ site.aperture.raw-url }}{{ page.app_path | append: file.name }})
+{% endif %}
 
 {% endfor %}
 

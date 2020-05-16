@@ -3,8 +3,10 @@ layout: documentation
 title: Aperture
 display_name: Microservice
 level: "top"
+app_path: microservice/
 files:
-  - microservice/pom.xml
+  - file:
+    name: pom.xml
 projects:
   - Config
   - Discovery

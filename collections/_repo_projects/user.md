@@ -3,8 +3,10 @@ layout: documentation
 title: Aperture
 display_name: User
 parent_name: Microservice
+app_path: microservice/user/
 files:
-  - microservice/user/pom.xml
+  - file:
+    name: pom.xml
 projects:
   - User-API
   - User-Client

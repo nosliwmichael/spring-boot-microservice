@@ -4,14 +4,16 @@ title: Aperture
 display_name: Home
 ---
 
-# {{ page.display_name }}
+# Purpose
 
-### Assumptions
+This project's purpose is to provide a basic look into what a microservice architecture might look like.
+This site should help you:
+- See how different applications can share properties and pull configuration from a centralized location.
+- Understand how the microservice architecture keeps track of many instances of a service and distributes an even load.
+- Develop better practices for inter-service/client communication.
 
-1. You have basic knowledge of web development.
-2. You are familiar with Git, Java (Spring), and Maven.
-
-Continue reading to get a better understanding of the project's structure or visit [Getting Started]({{ '/getting-started' | relative_url }}) to begin setting up the project locally.
+Continue reading to get a better understanding of the project's structure and the different pieces involved or visit
+[Getting Started]({{ '/getting-started' | relative_url }}) to learn how to set things up.
 
 ## Understanding the Project Structure
 
