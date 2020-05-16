@@ -1,7 +1,7 @@
 {% if page.parent_name %}
 ##### [Return to {{ page.parent_name }}]( {{ '/repo_projects/' | append: page.parent_name '/' | relative_url}})
 {% else %}
-##### [Return to Documentation](/documentation/)
+##### [Return to Documentation]({{ '/documentation/' | relative_url }})
 {% endif %}
 
 ## {{ page.display_name }}
