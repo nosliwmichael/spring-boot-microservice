@@ -6,13 +6,15 @@ spring:
 
 ---
 spring:
-  profiles: local-test
+  profiles: local
+# Disable Cloud Configuration and Discovery Service #
 spring.cloud.config.enabled: false
 eureka.client.enabled: false
 
 ---
 spring:
-  profiles: local-test, local
+  profiles: local, dev
+# Create H2 Database #
   datasource:
     url: jdbc:h2:mem:testdb
     driverClassName: org.h2.Driver
@@ -23,7 +25,7 @@ spring:
 
 ---
 spring:
-  profiles: local, dev
+  profiles: dev
   cloud:
     config:
       uri: http://localhost:8080
