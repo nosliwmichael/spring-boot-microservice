@@ -9,14 +9,11 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>microservice</artifactId>
+	<artifactId>microservices</artifactId>
 	<packaging>pom</packaging>
-	<name>microservice</name>
+	<name>microservices</name>
 
 	<modules>
-		<module>config</module>
-		<module>discovery</module>
-		<module>gateway</module>
 		<module>user</module>
 	</modules>
 
