@@ -21,19 +21,19 @@ public class UserDao {
 	
 	public List<UserImpl> getAllUsers() {
 		final CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
-		CriteriaQuery<UserImpl> criteriaQuery = criteriaBuilder.createQuery(UserImpl.class);
-		Root<UserImpl> root = criteriaQuery.from(UserImpl.class);
+		final CriteriaQuery<UserImpl> criteriaQuery = criteriaBuilder.createQuery(UserImpl.class);
+		final Root<UserImpl> root = criteriaQuery.from(UserImpl.class);
 		criteriaQuery.select(root);
-		TypedQuery<UserImpl> query = entityManager.createQuery(criteriaQuery);
+		final TypedQuery<UserImpl> query = entityManager.createQuery(criteriaQuery);
 		return query.getResultList();
 	}
 	
 	public UserImpl getUserById(Long userId) {
 		final CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
-		CriteriaQuery<UserImpl> criteriaQuery = criteriaBuilder.createQuery(UserImpl.class);
-		Root<UserImpl> root = criteriaQuery.from(UserImpl.class);
+		final CriteriaQuery<UserImpl> criteriaQuery = criteriaBuilder.createQuery(UserImpl.class);
+		final Root<UserImpl> root = criteriaQuery.from(UserImpl.class);
 		criteriaQuery.where(criteriaBuilder.equal(root.get("userId"), userId));
-		TypedQuery<UserImpl> query = entityManager.createQuery(criteriaQuery);
+		final TypedQuery<UserImpl> query = entityManager.createQuery(criteriaQuery);
 		return query.getSingleResult();
 	}
 	
