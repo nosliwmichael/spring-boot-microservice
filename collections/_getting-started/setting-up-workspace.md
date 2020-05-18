@@ -90,7 +90,7 @@ copy & paste so let me show you what that looks like:
 -DremoteConfigRepo=https://github.com/nosliwmichael/aperture-config
 -DrepoUsername=username
 -DrepoPassword=password
--Dspring.profiles.active=local
+-Dspring.profiles.active=dev
 ```
 
 ![Java Run Config Arguments]({{ '/images/java-run-config-arguments.PNG' | relative_url }})
@@ -101,8 +101,7 @@ If you plan on placing these apps into containers and exposing these values thro
 ![Java Run Config Environment]({{ '/images/java-run-config-environment.PNG' | relative_url }})
 
 Now let's cover what these variables are for and which ones are necessary. The spring.profiles one allows us to specify what profile we're running the app in. You can 
-make up your own profile names if you want. Just be sure to update the .yml property files to accomdate them. This app is setup to run with native, local, dev, and prod profiles. The local / remote config repository argument should be obvious. This is the location that we're storing the application specific property files we covered in the 
-Configuration Repository section. The localConfigRepo variable is used when the app is run with a profile of "native" and the remoteConfigRepo variable is used when the app is run with a profile of local, dev or prod. The localConfigRepo can point to a folder on your machine or a [place in your classpath](https://cloud.spring.io/spring-cloud-config/reference/html/#_file_system_backend). For that to work, you would need to update the bootstrap.yml property and change "file:///" to "classpath:/". The remoteConfigRepo can point to a [local repository on your machine or an external one](https://cloud.spring.io/spring-cloud-config/reference/html/#_environment_repository). I should also mention that the username and password arguments are **not required** unless you're configuration repository requires authentication. For example, if your github repo is set to private.
+make up your own profile names if you want. Just be sure to update the .yml property files to accomdate them. All apps can run local, dev, and prod profiles. Use local if you want to test a standalone app by itself. Use dev if you want to test how the apps interact with each other. Use prod in a production environment. The config service has an additional profile it can run on called, native. Set this one specifically in the bootstrap.yml of the config app if you want to use it. I'll explain what it's for in a moment. The local / remote config repository argument should be obvious. This is the location that we're storing the application specific property files we covered in the Configuration Repository section. The localConfigRepo variable is used when the app is run with a profile of "native" and the remoteConfigRepo variable is used when the app is run with a profile of local, dev or prod. The localConfigRepo can point to a folder on your machine or a [place in your classpath](https://cloud.spring.io/spring-cloud-config/reference/html/#_file_system_backend). For that to work, you would need to update the bootstrap.yml property and change "file:///" to "classpath:/". The remoteConfigRepo can point to a [local repository on your machine or an external one](https://cloud.spring.io/spring-cloud-config/reference/html/#_environment_repository). I should also mention that the username and password arguments are **not required** unless you're configuration repository requires authentication. For example, if your github repo is set to private.
 
 With that, you should be able to run the config app with no problems. The run configuration for the other apps only require the -Dspring.profiles.active argument.
 
