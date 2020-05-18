@@ -44,7 +44,7 @@
 		            		<input id="userId" type="text" class="form-control" name="userId" data-ng-model="vm.searchUserId"/>
 		            	</label>
 		            </div>
-		            <input type="button" class="btn btn-primary" value="Search" data-ng-click="vm.getUserById(vm.searchUserId)"/>
+		            <input type="button" class="btn btn-primary" value="Search" data-ng-click="vm.userSearch(vm.searchUserId)"/>
 			    </div>
 		    </div>
 			
@@ -59,10 +59,10 @@
 		            		</tr>
 		            	</thead>
 		            	<tbody>
-		            		<tr>
-		            			<td>{{vm.userResult.userId}}</td>
-		            			<td>{{vm.userResult.name}}</td>
-		            			<td>{{vm.userResult.age}}</td>
+		            		<tr data-ng-repeat="user in vm.userResults">
+		            			<td>{{user.userId}}</td>
+		            			<td>{{user.name}}</td>
+		            			<td>{{user.age}}</td>
 		            		</tr>
 		            	</tbody>
 		            </table>

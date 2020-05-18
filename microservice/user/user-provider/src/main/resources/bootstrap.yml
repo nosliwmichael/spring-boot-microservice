@@ -6,6 +6,23 @@ spring:
 
 ---
 spring:
+  profiles: local-test
+spring.cloud.config.enabled: false
+eureka.client.enabled: false
+
+---
+spring:
+  profiles: local-test, local
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  jpa.databasePlatform: org.hibernate.dialect.H2Dialect
+  datasource.data: classpath:/data/schema.sql, classpath:/data/person.sql
+
+---
+spring:
   profiles: local, dev
   cloud:
     config:
