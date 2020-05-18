@@ -5,7 +5,7 @@
 	
 	<parent>
 		<groupId>com.aperture</groupId>
-		<artifactId>microservice</artifactId>
+		<artifactId>microservices</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	
