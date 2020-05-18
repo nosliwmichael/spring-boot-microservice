@@ -2,7 +2,7 @@
 layout: documentation
 title: Aperture
 display_name: Web-App
-level: "top"
+level: top
 app_path: web-app/
 files:
   - file:

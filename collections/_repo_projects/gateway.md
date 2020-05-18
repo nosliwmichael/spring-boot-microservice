@@ -2,8 +2,8 @@
 layout: documentation
 title: Aperture
 display_name: Gateway
-parent_name: Microservice
-app_path: microservice/gateway/
+level: top
+app_path: gateway/
 files:
   - file:
     name: pom.xml

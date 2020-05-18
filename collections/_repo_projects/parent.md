@@ -2,7 +2,7 @@
 layout: documentation
 title: Aperture
 display_name: Parent
-level: "top"
+level: top
 app_path: parent/
 files:
   - file:

@@ -2,8 +2,8 @@
 layout: documentation
 title: Aperture
 display_name: Discovery
-parent_name: Microservice
-app_path: microservice/discovery/
+level: top
+app_path: discovery/
 files:
   - file:
     name: pom.xml

@@ -2,8 +2,8 @@
 layout: documentation
 title: Aperture
 display_name: Config
-parent_name: Microservice
-app_path: microservice/config/
+level: top
+app_path: config/
 files:
   - file:
     name: pom.xml

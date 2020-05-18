@@ -3,7 +3,7 @@ layout: documentation
 title: Aperture
 display_name: User-Provider
 parent_name: User
-app_path: microservice/user/user-provider/
+app_path: microservices/user/user-provider/
 files:
   - file:
     name: pom.xml
