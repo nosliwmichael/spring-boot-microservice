@@ -12,6 +12,10 @@
 	<artifactId>service-parent</artifactId>
 	<packaging>pom</packaging>
 	<name>service-parent</name>
+
+	<modules>
+		<module>../../microservices</module>
+	</modules>
 	
 	<dependencies>
 		<dependency>
