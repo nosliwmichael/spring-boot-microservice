@@ -14,7 +14,7 @@
 	<name>user-provider</name>
 
 	<dependencies>
-		<!-- USER -->
+		<!-- APERTURE -->
 		<dependency>
 			<groupId>com.aperture</groupId>
 			<artifactId>user-api</artifactId>

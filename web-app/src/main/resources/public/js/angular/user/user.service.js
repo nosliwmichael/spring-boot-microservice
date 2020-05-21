@@ -10,7 +10,7 @@
 	
 	function UserService($http) {
 		let BASE_URL = '/aperture';
-		let USER_ENDPOINT = BASE_URL + '/user-api/user/';
+		let USER_ENDPOINT = BASE_URL + '/user/';
 		
 		let service = {
 				getAllUsers: getAllUsers,

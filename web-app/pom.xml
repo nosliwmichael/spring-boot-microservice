@@ -19,7 +19,7 @@
 	</properties>
 
 	<dependencies>
-		<!-- USER -->
+		<!-- APERTURE -->
 		<dependency>
 			<groupId>com.aperture</groupId>
 			<artifactId>user-client</artifactId>
