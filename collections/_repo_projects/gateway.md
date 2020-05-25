@@ -1,5 +1,5 @@
 ---
-layout: documentation
+layout: default
 title: Aperture
 display_name: Gateway
 level: top
@@ -10,6 +10,9 @@ files:
   - file:
     path: src/main/java/com/aperture/gateway/
     name: GatewayApplication.java
+  - file:
+    path: src/main/java/com/aperture/gateway/controller/
+    name: FallbackController.java
   - file:
     path: src/main/resources/
     name: bootstrap.yml

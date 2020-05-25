@@ -1,5 +1,5 @@
 ---
-layout: documentation
+layout: default
 title: Aperture
 display_name: Microservices
 level: top

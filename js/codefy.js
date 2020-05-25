@@ -1,28 +1,10 @@
 var codefy = {};
 
-/* Initialize codefy with an IIFE (Immediately Invoked Function Expression) */
 (() => {
 
-    codefy.run = run;
-    run();
-
-    /**
-     * Fetch elements with [data-codefy] attributes.
-     * Get source data as text.
-     * Populate container with source data.
-     */
-    function run() {
-        let containers = document.querySelectorAll("[data-codefy]");
-        if (containers.length > 0) {
-            containers.forEach(c => {
-                sourceData(c.dataset.codefy)
-                .then((response) => {
-                    populateContainer(response, c);
-                })
-                .catch(console.error);
-            });
-        }
-    }
+    // PUBLIC METHODS //
+    codefy.sourceData = sourceData;
+    codefy.populateContainer = populateContainer;
 
     /**
      * Perform an AJAX request to an endpoint.

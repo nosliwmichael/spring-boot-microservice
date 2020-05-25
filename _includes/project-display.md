@@ -14,9 +14,13 @@
 
 {% for file in page.files %}
 {% if file.path %}
-[{{ file.name }}]({{ site.aperture.raw-url | append: site.aperture.branch }}/{{ page.app_path | append: file.path | append: file.name }})
+<a class="code-link" href="{{ site.aperture.raw-url | append: site.aperture.branch }}/{{ page.app_path | append: file.path | append: file.name }}">
+    {{ file.name }}
+</a>
 {% else %}
-[{{ file.name }}]({{ site.aperture.raw-url | append: site.aperture.branch }}/{{ page.app_path | append: file.name }})
+<a class="code-link" href="{{ site.aperture.raw-url | append: site.aperture.branch }}/{{ page.app_path | append: file.name }}">
+    {{ file.name }}
+</a>
 {% endif %}
 
 {% endfor %}
@@ -42,3 +46,5 @@
 {% endfor %}
 
 {% endif %}
+
+{% include code-modal.html %}

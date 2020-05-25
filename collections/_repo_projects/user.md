@@ -1,5 +1,5 @@
 ---
-layout: documentation
+layout: default
 title: Aperture
 display_name: User
 parent_name: Microservices

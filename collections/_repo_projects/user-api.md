@@ -1,5 +1,5 @@
 ---
-layout: documentation
+layout: default
 title: Aperture
 display_name: User-API
 parent_name: User

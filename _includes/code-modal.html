@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="{{ '/css/modal.css' | relative_url }}"/>
+<link rel="stylesheet" href="{{ '/css/prism-okaidia.css' | relative_url }}"/>
+
+<div id="modalBackdrop" class="modal-backdrop">
+    <div id="modalContent" class="modal-content">
+        <span id="modalCloseButton" class="close">&times;</span>
+        <h5 id="modalHeader"></h5>
+        <pre class="line-numbers">
+            <code id="codeContent"></code>
+        </pre>
+    </div>
+</div>
+
+<script src="{{ '/js/codefy.js' | relative_url }}"></script>
+<script src="{{ '/js/codefy-modal.js' | relative_url }}"></script>
+<script src="{{ '/js/prism.js' | relative_url }}"></script>
