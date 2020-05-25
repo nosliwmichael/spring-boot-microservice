@@ -34,7 +34,7 @@ public class UserDao {
 		final Root<UserImpl> root = criteriaQuery.from(UserImpl.class);
 		criteriaQuery.where(criteriaBuilder.equal(root.get("userId"), userId));
 		final TypedQuery<UserImpl> query = entityManager.createQuery(criteriaQuery);
-		return query.getSingleResult();
+		return query.getResultList().stream().findFirst().orElse(null);
 	}
 	
 }
