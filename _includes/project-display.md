@@ -14,9 +14,9 @@
 
 {% for file in page.files %}
 {% if file.path %}
-[{{ file.name }}]({{ site.aperture.raw-url }}{{ page.app_path | append: file.path | append: file.name }})
+[{{ file.name }}]({{ site.aperture.raw-url | append: site.aperture.branch }}/{{ page.app_path | append: file.path | append: file.name }})
 {% else %}
-[{{ file.name }}]({{ site.aperture.raw-url }}{{ page.app_path | append: file.name }})
+[{{ file.name }}]({{ site.aperture.raw-url | append: site.aperture.branch }}/{{ page.app_path | append: file.name }})
 {% endif %}
 
 {% endfor %}

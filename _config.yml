@@ -11,4 +11,5 @@ collections:
     output: true
     
 aperture:
-  raw-url: https://raw.githubusercontent.com/nosliwmichael/aperture/master/
+  raw-url: https://raw.githubusercontent.com/nosliwmichael/aperture/
+  branch: master

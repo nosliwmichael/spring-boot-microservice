@@ -16,15 +16,14 @@ Continue reading to get a better understanding of the project's structure and th
 
 ## Understanding the Project Structure
 
-Start by cloning the repository to your local workspace. For me this will be in my D:/eclipse-workspace folder.
-Import the projects into your preferred IDE. You should have something like this:
+Start by cloning the repository to your local workspace and importing the projects into your preferred IDE. You should have something like this:
 
 ![Aperture Project Structure]({{ '/images/project-structure-eclipse.PNG' | relative_url }})
 
 There are a lot of projects to cover here but they've been separated into logical groups. If you look through some of them, you might not find as much code as you would expect.
 Spring Boot/Cloud takes care of a large amount of the boiler plate code for you. As a result, most of the work for us (at least in the beginning) is to set up the configuration files.
 
-Let's start with the **parent** project. As you can see it contains a pom.xml and a sub-module called service-parent. Opening up **service-parent**, you can see it only contains a pom.xml. These projects will be used to establish project wide properties, configuration, and maven dependencies. Dependencies placed in the parent pom will be included for every project in the repository. Dependencies placed in the service-parent pom will be included in every sub-module of the microservice project.
+Let's start with the **parent** project. As you can see it contains a pom.xml and a sub-module called service-parent. Opening up **service-parent**, you can see it only contains a pom.xml. These projects will be used to establish project wide properties, configuration, and maven dependencies as well as enable us to install every module with a single run configuration. Dependencies placed in the parent pom will be included for every project in the repository. Dependencies placed in the service-parent pom will be included in every sub-module of the microservice project.
 
 The **config** module is a small spring boot application which, when run, starts a tomcat server that provides the appropriate property files to the requesting application. This means that all configuration is stored and hosted by this server. This is to help us maintain our configuration files in a centralized location and even share properties across multiple projects without redundancy. The property files can be pulled from the classpath of the config project, from somewhere on the file system, or even from a designated repository. In the provided config module, I've decided to host the property files in a separate repository. Later on in the setup section I'll discuss how to create your own configuration property repository and point to it.
 
