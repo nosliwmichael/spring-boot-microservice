@@ -16,7 +16,7 @@ spring:
   profiles: local, dev
 # Create H2 Database #
   datasource:
-    url: jdbc:h2:mem:testdb
+    url: jdbc:h2:mem:userDB
     driverClassName: org.h2.Driver
     username: sa
     password: password
