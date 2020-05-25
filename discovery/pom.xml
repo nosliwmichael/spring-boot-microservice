@@ -8,6 +8,7 @@
 		<groupId>com.aperture</groupId>
 		<artifactId>parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 
 	<artifactId>discovery</artifactId>

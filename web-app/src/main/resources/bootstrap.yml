@@ -6,7 +6,7 @@ spring:
 
 ---
 spring:
-  profiless: local, dev
+  profiles: local, dev
   cloud:
     config:
       uri: http://localhost:8080

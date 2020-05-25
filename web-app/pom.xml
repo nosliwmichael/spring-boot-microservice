@@ -8,6 +8,7 @@
 		<groupId>com.aperture</groupId>
 		<artifactId>parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 
 	<artifactId>web-app</artifactId>
@@ -19,7 +20,7 @@
 	</properties>
 
 	<dependencies>
-		<!-- USER -->
+		<!-- APERTURE -->
 		<dependency>
 			<groupId>com.aperture</groupId>
 			<artifactId>user-client</artifactId>
@@ -77,7 +78,12 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>5.2.6.RELEASE</version>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<plugins>

@@ -14,7 +14,7 @@
 	<name>user-provider</name>
 
 	<dependencies>
-		<!-- USER -->
+		<!-- APERTURE -->
 		<dependency>
 			<groupId>com.aperture</groupId>
 			<artifactId>user-api</artifactId>
@@ -52,9 +52,15 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
+		<!-- H2 IN-MEMORY DB -->
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
