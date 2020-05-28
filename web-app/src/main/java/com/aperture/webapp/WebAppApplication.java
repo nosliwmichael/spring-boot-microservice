@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-@EnableFeignClients(basePackages = "com.aperture.config")
+@EnableFeignClients(basePackages = "com.aperture.client")
 public class WebAppApplication {
 
 	public static void main(String[] args) {

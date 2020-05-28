@@ -5,9 +5,9 @@
 
 	<parent>
 		<groupId>com.aperture</groupId>
-		<artifactId>service-parent</artifactId>
+		<artifactId>parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>../parent/service-parent/pom.xml</relativePath>
+		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 
 	<artifactId>microservices</artifactId>
@@ -15,7 +15,24 @@
 	<name>microservices</name>
 
 	<modules>
+		<module>base-service</module>
 		<module>user</module>
+		<module>scraper</module>
 	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.aperture</groupId>
+				<artifactId>base-client</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.aperture</groupId>
+				<artifactId>base-provider</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 </project>

@@ -3,7 +3,7 @@
 	'use strict';
 	
 	angular
-		.module('user')
+		.module('user.module')
 		.factory('UserService', UserService);
 	
 	UserService.$inject = ['$http'];
