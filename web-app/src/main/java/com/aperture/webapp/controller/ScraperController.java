@@ -8,14 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/scraper")
-public class ScraperController {
+public class ScraperController extends BaseController {
 
     @Autowired
     private ElementScraperClient elementScraperClient;
@@ -28,7 +25,7 @@ public class ScraperController {
         return "scraper/scraper";
     }
 
-    @GetMapping("/response")
+    @PostMapping("/response")
     @ResponseBody
     public ResponseEntity<?> response(@RequestBody String url) {
         return new ResponseEntity<>(
@@ -36,7 +33,7 @@ public class ScraperController {
                 HttpStatus.OK);
     }
 
-    @GetMapping("/response/_parse")
+    @PostMapping("/response/_parse")
     @ResponseBody
     public ResponseEntity<?> responseParse(@RequestBody GenericScrape genericScrape) {
         return new ResponseEntity<>(
@@ -44,7 +41,7 @@ public class ScraperController {
                 HttpStatus.OK);
     }
 
-    @GetMapping("/response/body")
+    @PostMapping("/response/body")
     @ResponseBody
     public ResponseEntity<?> responseBody(@RequestBody String url) {
         return new ResponseEntity<>(
@@ -52,7 +49,7 @@ public class ScraperController {
                 HttpStatus.OK);
     }
 
-    @GetMapping("/response/body/_parse")
+    @PostMapping("/response/body/_parse")
     @ResponseBody
     public ResponseEntity<?> responseBodyParse(@RequestBody GenericScrape genericScrape) {
         return new ResponseEntity<>(
@@ -61,7 +58,7 @@ public class ScraperController {
         );
     }
 
-    @GetMapping("/elements/_scrape")
+    @PostMapping("/elements/_scrape")
     @ResponseBody
     public ResponseEntity<?> scrapePage(@RequestBody ElementCriteria criteria) {
         return new ResponseEntity<>(
