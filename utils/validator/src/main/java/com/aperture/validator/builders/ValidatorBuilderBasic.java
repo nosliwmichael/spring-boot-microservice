@@ -31,9 +31,17 @@ interface ValidatorBuilderBasic {
     }
 
     default ValidatorBuilder isEqualToObject(Object source, Object reference) {
-        if (!BasicValidator.isEqualTo(source, reference)) {
+        if (!BasicValidator.isEqualToObject(source, reference)) {
             ValidatorBuilder.invalidate();
             ValidatorBuilder.recordFailedTest("isEqualToObject");
+        }
+        return ValidatorBuilder.getInstance();
+    }
+
+    default ValidatorBuilder isEqualToString(String source, String reference) {
+        if (!BasicValidator.isEqualToString(source, reference)) {
+            ValidatorBuilder.invalidate();
+            ValidatorBuilder.recordFailedTest("isEqualToString");
         }
         return ValidatorBuilder.getInstance();
     }

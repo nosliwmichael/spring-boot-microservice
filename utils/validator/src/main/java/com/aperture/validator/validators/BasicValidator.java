@@ -15,12 +15,22 @@ public interface BasicValidator {
 	static boolean isType(Object source, Class<?> type) {
 		return source.getClass() == type;
 	}
-	
-	static boolean isEqualTo(Object source, Object reference) {
-		if (isNotNull(source) && isNotNull(reference)) {
-			return source.equals(reference);
+
+	static boolean isEqualToObject(Object source, Object reference) {
+		if (source instanceof String && reference instanceof String) {
+			return isEqualToString((String)source, (String)reference);
+		} else if (isNull(source)) {
+			return null == reference;
 		} else {
-			return false;
+			return source.equals(reference);
+		}
+	}
+
+	static boolean isEqualToString(String source, String reference) {
+		if (isNull(source) || source.isEmpty()) {
+			return (null == reference || reference.isEmpty());
+		} else {
+			return source.equals(reference);
 		}
 	}
 	
