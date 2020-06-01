@@ -9,7 +9,7 @@
 	UserController.$inject = ['UserService', '$log'];
 	
 	function UserController(userService, $log) {
-		var vm = this;
+		let vm = this;
 		
 		// Exposed properties
 		vm.userResults;
@@ -29,24 +29,24 @@
 		
 		function getAllUsers() {
 			userService.getAllUsers()
-			.then(response => {
-				$log.log(response);
-				vm.userResults = response.data;
-			})
-			.catch(error => {
-				$log.error(error);
-			});
+				.then(response => {
+					$log.log(response);
+					vm.userResults = response.data;
+				})
+				.catch(error => {
+					$log.error(error);
+				});
 		}
 		
 		function getUserById(userId) {
 			userService.getUserById(userId)
-			.then(response => {
-				$log.log(response);
-				vm.userResults = [response.data];
-			})
-			.catch(error => {
-				$log.error(error);
-			});
+				.then(response => {
+					$log.log(response);
+					vm.userResults = [response.data];
+				})
+				.catch(error => {
+					$log.error(error);
+				});
 		}
 		
 	}

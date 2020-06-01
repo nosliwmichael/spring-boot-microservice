@@ -2,6 +2,6 @@
 
 	'use strict';
 
-	angular.module('scraper.module', []);
+	angular.module('scraper.module', ['common.module']);
 
 })();

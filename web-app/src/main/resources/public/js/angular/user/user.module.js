@@ -2,6 +2,6 @@
 	
 	'use strict';
 	
-	angular.module('user.module', []);
+	angular.module('user.module', ['common.module']);
 	
 })();

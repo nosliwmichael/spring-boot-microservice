@@ -6,25 +6,23 @@
 		.module('user.module')
 		.factory('UserService', UserService);
 	
-	UserService.$inject = ['$http'];
+	UserService.$inject = ['$http', 'EndpointService'];
 	
-	function UserService($http) {
-		let BASE_URL = '/aperture';
-		let USER_ENDPOINT = BASE_URL + '/user/';
+	function UserService($http, endpointService) {
+
+		let USER_REST_ENDPOINT = endpointService.getUserEndpoints().REST_ENDPOINT;
 		
-		let service = {
+		return {
 				getAllUsers: getAllUsers,
 				getUserById: getUserById,
 		};
 		
-		return service;
-		
 		function getAllUsers() {
-			return $http.get(USER_ENDPOINT);
+			return $http.get(USER_REST_ENDPOINT);
 		}
 		
 		function getUserById(userId) {
-			return $http.get(USER_ENDPOINT + userId);
+			return $http.get(USER_REST_ENDPOINT + userId);
 		}
 		
 	}
