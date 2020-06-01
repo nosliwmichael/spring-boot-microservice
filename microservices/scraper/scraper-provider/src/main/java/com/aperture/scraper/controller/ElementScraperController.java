@@ -51,17 +51,17 @@ public class ElementScraperController implements ElementScraperEndpoint {
     private boolean passCriteriaCheck(Element element, ElementCriteria criteria) {
         ValidatorBuilder validator = ValidatorBuilder.create();
         if (criteria.getId() != null) {
-            validator.isEqualToObject(element.attr("id"), criteria.getId());
+            validator.isEqualToString(element.attr("id"), criteria.getId());
         }
         if (criteria.getTagName() != null) {
-            validator.isEqualToObject(element.tagName(), criteria.getTagName());
+            validator.isEqualToString(element.tagName(), criteria.getTagName());
         }
         if (criteria.getClassNames() != null) {
             criteria.getClassNames().forEach((c) -> validator.test(c, element::hasClass));
         }
         if (criteria.getAttributes() != null) {
             criteria.getAttributes().forEach((k,v) ->
-                    validator.isEqualToObject(element.attributes().getIgnoreCase(k), v));
+                    validator.isEqualToString(element.attributes().getIgnoreCase(k), v));
         }
         return ValidatorBuilder.isValid();
     }

@@ -1,15 +1,18 @@
 package com.aperture.scraper.model;
 
-import org.jsoup.nodes.Attributes;
-import org.jsoup.nodes.Element;
+import com.aperture.jacksonmapping.deserializer.CustomStringDeserializer;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import java.util.List;
 import java.util.Map;
 
 public class ElementCriteria {
 
+    @JsonDeserialize(using = CustomStringDeserializer.class)
     private String url;
+    @JsonDeserialize(using = CustomStringDeserializer.class)
     private String tagName;
+    @JsonDeserialize(using = CustomStringDeserializer.class)
     private String id;
     private List<String> classNames;
     private Map<String, String> attributes;

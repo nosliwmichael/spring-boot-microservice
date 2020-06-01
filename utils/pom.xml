@@ -17,6 +17,7 @@
 
     <modules>
         <module>validator</module>
+        <module>jackson-mapping</module>
     </modules>
 
 </project>

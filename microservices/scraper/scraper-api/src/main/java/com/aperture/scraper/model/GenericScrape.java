@@ -1,8 +1,13 @@
 package com.aperture.scraper.model;
 
+import com.aperture.jacksonmapping.deserializer.CustomStringDeserializer;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
 public class GenericScrape {
 
+    @JsonDeserialize(using = CustomStringDeserializer.class)
     private String url;
+    @JsonDeserialize(using = CustomStringDeserializer.class)
     private String regex;
 
     public String getUrl() {
