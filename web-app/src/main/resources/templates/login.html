@@ -2,10 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:th="https://www.thymeleaf.org">
 
-	<th:block th:include="fragments/general.html :: head"></th:block>
+	<th:block th:include="fragments/common.html :: head"></th:block>
 	<body>
 
-		<th:block th:include="fragments/general.html :: nav"></th:block>
+		<th:block th:include="fragments/common.html :: nav"></th:block>
 		
 		<header class="page-header">
 			<h1>Login</h1>
@@ -13,10 +13,10 @@
 		
 		<div id="loginCard" class="card d-flex">
 			<div class="card-body mx-auto">
-		        <div th:if="${param.error}">
+		        <div class="text-center text-danger" th:if="${param.error}">
 		            Invalid username and password.
 		        </div>
-		        <div th:if="${param.logout}">
+		        <div class="text-center text-primary" th:if="${param.logout}">
 		            You have been logged out.
 		        </div>
 		        <form th:action="@{/login}" method="post">
