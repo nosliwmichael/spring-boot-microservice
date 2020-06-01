@@ -11,14 +11,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/scraper")
+@RequestMapping(value = "/scraper")
 public class ScraperController extends BaseController {
 
-    @Autowired
-    private ElementScraperClient elementScraperClient;
+    private final ElementScraperClient elementScraperClient;
+    private final GenericScraperClient genericScraperClient;
 
     @Autowired
-    private GenericScraperClient genericScraperClient;
+    public ScraperController(ElementScraperClient elementScraperClient, GenericScraperClient genericScraperClient) {
+        this.elementScraperClient = elementScraperClient;
+        this.genericScraperClient = genericScraperClient;
+    }
 
     @GetMapping("")
     public String getScraperPage() {

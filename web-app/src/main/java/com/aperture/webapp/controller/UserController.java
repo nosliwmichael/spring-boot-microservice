@@ -14,8 +14,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping(value = "/user")
 public class UserController extends BaseController {
 
+	private final UserClient userClient;
+
 	@Autowired
-	private UserClient userClient;
+	public UserController(UserClient userClient) {
+		this.userClient = userClient;
+	}
 
 	@GetMapping("")
 	public String getUserPage() {
