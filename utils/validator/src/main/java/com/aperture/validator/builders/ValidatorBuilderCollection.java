@@ -1,13 +1,13 @@
 package com.aperture.validator.builders;
 
-import com.aperture.validator.validators.ListValidator;
+import com.aperture.validator.validators.CollectionValidator;
 
 import java.util.Collection;
 
 interface ValidatorBuilderCollection {
 
     default ValidatorBuilder doesContain(Collection<?> source, Object reference) {
-        if (!ListValidator.doesContain(source, reference)) {
+        if (!CollectionValidator.doesContain(source, reference)) {
             ValidatorBuilder.invalidate();
             ValidatorBuilder.recordFailedTest("doesContain");
         }
@@ -15,7 +15,7 @@ interface ValidatorBuilderCollection {
     }
 
     default ValidatorBuilder doesContainAll(Collection<?> source, Collection<?> reference) {
-        if (!ListValidator.doesContainAll(source, reference)) {
+        if (!CollectionValidator.doesContainAll(source, reference)) {
             ValidatorBuilder.invalidate();
             ValidatorBuilder.recordFailedTest("doesContain");
         }
