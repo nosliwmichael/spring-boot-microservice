@@ -67,10 +67,10 @@
 
     function touchEndEvent(event) {
         if (codefy.modalOpen && !event.path.includes(codeContainer)) {
-            let xDiff = touchPos.x - event.changedTouches[0].clientX;
-            let yDiff = touchPos.y - event.changedTouches[0].clientY;
+            let xDiff = event.changedTouches[0].clientX - touchPos.x;
+            let yDiff = event.changedTouches[0].clientY - touchPos.y;
             if (Math.abs(xDiff) > Math.abs(yDiff)) {
-                if (xDiff > 0) {
+                if (0 < xDiff) {
                     codefy.previousModal();
                 } else {
                     codefy.nextModal();
