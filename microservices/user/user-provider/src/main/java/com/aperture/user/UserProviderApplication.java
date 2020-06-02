@@ -7,7 +7,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableFeignClients(basePackages = "com.aperture.config")
+@EnableFeignClients(basePackages = "com.aperture.client")
 public class UserProviderApplication {
 
 	public static void main(String[] args) {

@@ -6,6 +6,9 @@ header.page-header {
 div.card {
 	margin: 1em auto;
 	width: fit-content;
+	max-width: 80em;
+	max-height: 40em;
+	overflow: auto;
 }
 div.card input,
 div.card table {

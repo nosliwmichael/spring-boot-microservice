@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+
+    <th:block th:include="fragments/common.html :: head"></th:block>
+
+    <body>
+
+        <th:block th:include="fragments/angular-scripts.html :: angularjs"></th:block>
+        <th:block th:include="fragments/angular-scripts.html :: common"></th:block>
+        <th:block th:include="fragments/angular-scripts.html :: scraper"></th:block>
+
+        <th:block th:include="fragments/common.html :: nav"></th:block>
+
+        <header class="page-header">
+            <h1>Scraper</h1>
+        </header>
+
+        <main data-ng-app="scraper.module" data-ng-controller="ScraperController as vm">
+
+            <div class="card d-flex">
+                <div class="card-body mx-auto">
+                    <div class="input-group">
+                        <label for="url">URL:
+                            <input id="url" type="text" class="form-control" name="url" data-ng-model="vm.elementCriteriaForm.url"/>
+                        </label>
+                    </div>
+                    <div class="input-group">
+                        <label for="elementId">ID:
+                            <input id="elementId" type="text" class="form-control" name="elementId" data-ng-model="vm.elementCriteriaForm.id"/>
+                        </label>
+                    </div>
+                    <div class="input-group">
+                        <label for="classNames">Class Names:
+                            <input id="classNames" type="text" class="form-control" name="classNames" data-ng-model="vm.elementCriteriaForm.classNames"/>
+                        </label>
+                    </div>
+                    <div class="input-group">
+                        <label for="tagName">Tag Name:
+                            <input id="tagName" type="text" class="form-control" name="tagName" data-ng-model="vm.elementCriteriaForm.tagName"/>
+                        </label>
+                    </div>
+                    <input type="button" class="btn btn-primary" value="Element Search" data-ng-click="vm.getElements()"/>
+                </div>
+            </div> <!-- End of Card -->
+
+            <div class="card d-flex">
+                <div class="card-body mx-auto">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col" colspan="4">Element Results - {{vm.elementResults.length}}</th>
+                            </tr>
+                            <tr>
+                                <th scope="col">Tag</th>
+                                <th scope="col">ID</th>
+                                <th scope="col">Classes</th>
+                                <th scope="col">HTML</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-ng-repeat="element in vm.elementResults">
+                                <td>{{element.tag}}</td>
+                                <td>{{element.id}}</td>
+                                <td>{{element.classes}}</td>
+                                <td>{{element.html}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+
+    </body>
+</html>
