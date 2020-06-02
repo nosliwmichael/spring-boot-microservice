@@ -70,9 +70,10 @@
             let xDiff = event.changedTouches[0].clientX - touchPos.x;
             let yDiff = event.changedTouches[0].clientY - touchPos.y;
             if (Math.abs(xDiff) > Math.abs(yDiff)) {
-                if (0 < xDiff) {
+                if (30 < xDiff) {
                     codefy.previousModal();
-                } else {
+                }
+                else if (-30 > xDiff) {
                     codefy.nextModal();
                 }
             }
