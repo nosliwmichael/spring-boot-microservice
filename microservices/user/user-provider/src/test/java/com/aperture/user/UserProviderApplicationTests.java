@@ -1,16 +1,15 @@
 package com.aperture.user;
 
-import com.aperture.user.controller.UserController;
-import com.aperture.user.remote.UserRemote;
-import com.aperture.user.service.UserService;
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.util.Assert;
 
-import java.util.List;
-import java.util.stream.Collectors;
+import com.aperture.user.controller.UserController;
+import com.aperture.user.remote.UserRemote;
 
 @SpringBootTest
 @TestPropertySource(locations = "classpath:UserProviderApplicationTests.properties")
