@@ -11,7 +11,7 @@ permalink: /getting-started/intellij
 
 1. You have basic knowledge of web development.
 2. You are familiar with Git, Java (Spring), and Maven.
-3. You are using the [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/){:target="_blank"}.
+3. You are using [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/){:target="_blank"}.
 
 **Note:** The IntelliJ Community edition does not support JavaEE. This may cause you to experience ClassNotFound exceptions when attempting to run spring boot applications that use the spring-boot-starter-tomcat dependency with a provided scope. If that's the case, either change the scope to compile (not recommended) or run your own tomcat server.
 

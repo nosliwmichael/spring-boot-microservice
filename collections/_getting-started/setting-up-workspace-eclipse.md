@@ -11,9 +11,9 @@ permalink: /getting-started/eclipse
 
 1. You have basic knowledge of web development.
 2. You are familiar with Git, Java (Spring), and Maven.
-3. You are using the [Eclipse IDE for Enterprise](https://www.eclipse.org/){:target="_blank"}.
+3. You are using [Eclipse IDE for Enterprise](https://www.eclipse.org/){:target="_blank"}.
 
-**Note:** Non Enterprise editions do not support JavaEE. This may cause you to experience ClassNotFound exceptions when attempting to run spring boot applications that use the spring-boot-starter-tomcat dependency with a provided scope. If that's the case, either change the scope to compile (not recommended) or run your own tomcat server.
+**Note:** Non-Enterprise IDEs do not support JavaEE. This may cause you to experience ClassNotFound exceptions when attempting to run spring boot applications that use the spring-boot-starter-tomcat dependency with a provided scope. If that's the case, either change the scope to compile (not recommended) or run your own tomcat server.
 
 ## Installation
 
@@ -24,14 +24,13 @@ You should have something like this:
 
 ![Aperture Project Structure]({{ '/images/project-structure-eclipse.PNG' | relative_url }})
 
-You only need to create a Maven install run configuration for the parent project. This is because the parent pom contains each top-level project (excluding microservices) as a sub-module. The microservices project is a sub-module of the service-parent pom. By installing the parent project, you are installing the projects in the following order: 
+You only need to create a Maven install run configuration for the parent project. This is because the parent pom contains each top-level project as a sub-module. By installing the parent project, you are installing the projects in the following order: 
 - parent
-  - service-parent
-    - microservices
-      - user
-        - user-api
-        - user-client
-        - user-provider
+  - microservices
+    - user
+      - user-api
+      - user-client
+      - user-provider
   - config
   - discovery
   - gateway
