@@ -3,13 +3,13 @@
 	'use strict';
 	
 	angular
-		.module('user')
+		.module('user.module')
 		.controller('UserController', UserController);
 	
 	UserController.$inject = ['UserService', '$log'];
 	
-	function UserController(userFactory, $log) {
-		var vm = this;
+	function UserController(userService, $log) {
+		let vm = this;
 		
 		// Exposed properties
 		vm.userResults;
@@ -28,25 +28,25 @@
 		}
 		
 		function getAllUsers() {
-			userFactory.getAllUsers()
-			.then(response => {
-				$log.log(response);
-				vm.userResults = response.data;
-			})
-			.catch(error => {
-				$log.error(error);
-			});
+			userService.getAllUsers()
+				.then(response => {
+					$log.log(response);
+					vm.userResults = response.data;
+				})
+				.catch(error => {
+					$log.error(error);
+				});
 		}
 		
 		function getUserById(userId) {
-			userFactory.getUserById(userId)
-			.then(response => {
-				$log.log(response);
-				vm.userResults = [response.data];
-			})
-			.catch(error => {
-				$log.error(error);
-			});
+			userService.getUserById(userId)
+				.then(response => {
+					$log.log(response);
+					vm.userResults = [response.data];
+				})
+				.catch(error => {
+					$log.error(error);
+				});
 		}
 		
 	}

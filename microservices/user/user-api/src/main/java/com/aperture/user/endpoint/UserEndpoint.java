@@ -14,7 +14,7 @@ import com.aperture.user.remote.UserRemote;
 public interface UserEndpoint {
 
 	@GetMapping(value = "/user/")
-	public List<UserRemote> getAllUsers();
+	List<UserRemote> getAllUsers();
 
 	@GetMapping(value = "/user/{userId}")
 	UserRemote getUserById(@PathVariable("userId") Long userId);

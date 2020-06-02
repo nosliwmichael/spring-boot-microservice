@@ -1,75 +1,55 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Aperture</title>
-        <link rel="stylesheet" type="text/css" href="css/main.css">
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-		<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-		<script type="text/javascript" src="js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.4-build.3588/angular.min.js"></script>
-		<script type="text/javascript" src="js/angular/user/user.module.js"></script>
-		<script type="text/javascript" src="js/angular/user/user.controller.js"></script>
-		<script type="text/javascript" src="js/angular/user/user.service.js"></script>
-	</head>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="https://www.thymeleaf.org">
+
+	<th:block th:include="fragments/common.html :: head"></th:block>
+
 	<body>
-	
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="#">Aperture</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse"
-				data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
-				aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-				<div class="navbar-nav mr-auto">
-					<a class="nav-item nav-link" href=".">Home</a>
-					<a class="nav-item nav-link active" href="#">User</a>
-				</div>
-				<span>
-					<a type="button" class="btn btn-outline-primary" href="login">Login<span class="sr-only">(current)</span></a>
-				</span>
-			</div>
-		</nav>
-	
+
+		<th:block th:include="fragments/angular-scripts.html :: angularjs"></th:block>
+		<th:block th:include="fragments/angular-scripts.html :: common"></th:block>
+		<th:block th:include="fragments/angular-scripts.html :: user"></th:block>
+
+		<th:block th:include="fragments/common.html :: nav"></th:block>
+
 		<header class="page-header">
 			<h1>User Page</h1>
 		</header>
-		
-		<main data-ng-app="user" data-ng-controller="UserController as vm">
-		
+
+		<main data-ng-app="user.module" data-ng-controller="UserController as vm">
+
 			<div class="card d-flex">
 				<div class="card-body mx-auto">
-		            <div class="input-group">
-		            	<label for="userId">Search By User ID : 
-		            		<input id="userId" type="text" class="form-control" name="userId" data-ng-model="vm.searchUserId"/>
-		            	</label>
-		            </div>
-		            <input type="button" class="btn btn-primary" value="Search" data-ng-click="vm.userSearch(vm.searchUserId)"/>
-			    </div>
-		    </div>
-			
+					<div class="input-group">
+						<label for="userId">Search By User ID:
+							<input id="userId" type="text" class="form-control" name="userId" data-ng-model="vm.searchUserId"/>
+						</label>
+					</div>
+					<input type="button" class="btn btn-primary" value="Search" data-ng-click="vm.userSearch(vm.searchUserId)"/>
+				</div>
+			</div>
+
 			<div class="card d-flex">
 				<div class="card-body mx-auto">
-		            <table class="table">
-		            	<thead>
-		            		<tr>
-		            			<th scope="col">User ID</th>
-		            			<th scope="col">Name</th>
-		            			<th scope="col">Age</th>
-		            		</tr>
-		            	</thead>
-		            	<tbody>
-		            		<tr data-ng-repeat="user in vm.userResults">
-		            			<td>{{user.userId}}</td>
-		            			<td>{{user.name}}</td>
-		            			<td>{{user.age}}</td>
-		            		</tr>
-		            	</tbody>
-		            </table>
-			    </div>
-		    </div>
-		    
+					<table class="table">
+						<thead>
+							<tr>
+								<th scope="col">User ID</th>
+								<th scope="col">Name</th>
+								<th scope="col">Age</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr data-ng-repeat="user in vm.userResults">
+								<td>{{user.userId}}</td>
+								<td>{{user.name}}</td>
+								<td>{{user.age}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
 		</main>
-		
+
 	</body>
 </html>

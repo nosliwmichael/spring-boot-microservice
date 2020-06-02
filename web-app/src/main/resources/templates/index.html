@@ -1,37 +1,15 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="https://www.thymeleaf.org"
-	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
-	<head>
-		<meta charset="ISO-8859-1">
-		<title>Aperture</title>
-		<link rel="stylesheet" type="text/css" href="css/main.css">
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-		<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-		<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	</head>
+	  xmlns:th="https://www.thymeleaf.org">
+
+	<th:block th:include="fragments/common.html :: head"></th:block>
 	<body>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="#">Aperture</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse"
-				data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
-				aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-				<div class="navbar-nav mr-auto">
-					<a class="nav-item nav-link active" href="#">Home<span class="sr-only">(current)</span></a>
-					<a class="nav-item nav-link" href="user">User</a>
-				</div>
-				<span>
-					<a type="button" class="btn btn-outline-primary" href="login">Login</a>
-				</span>
-			</div>
-		</nav>
-	
+
+		<th:block th:include="fragments/common.html :: nav"></th:block>
+
 		<header class="page-header">
 			<h1>Welcome To Aperture</h1>
 		</header>
-	
+
 	</body>
 </html>

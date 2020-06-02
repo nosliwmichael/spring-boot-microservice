@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: "scraper-api"
+  main:
+    banner-mode: "off"
+
+---
+spring.profiles: local
+spring.cloud.config.enabled: false
+eureka.client.enabled: false
+
+---
+spring.profiles: dev
+spring.cloud.config.uri: http://localhost:8080
+
+---
+spring.profiles: prod
+spring.cloud.config.uri: ${config.server.url}
