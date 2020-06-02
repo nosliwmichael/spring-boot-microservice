@@ -21,7 +21,25 @@ files:
     name: WebSecurityConfig.java
   - file:
     path: src/main/java/com/aperture/webapp/controller/
+    name: BaseController.java
+  - file:
+    path: src/main/java/com/aperture/webapp/controller/
     name: MainController.java
+  - file:
+    path: src/main/java/com/aperture/webapp/controller/
+    name: UserController.java
+  - file:
+    path: src/main/java/com/aperture/webapp/controller/
+    name: ScraperController.java
+  - file:
+    path: src/main/resources/public/js/angular/common/
+    name: common.module.js
+  - file:
+    path: src/main/resources/public/js/angular/common/
+    name: common.service.js
+  - file:
+    path: src/main/resources/public/js/angular/common/
+    name: endpoint.service.js
   - file:
     path: src/main/resources/public/js/angular/user/
     name: user.module.js
@@ -32,8 +50,32 @@ files:
     path: src/main/resources/public/js/angular/user/
     name: user.service.js
   - file:
+    path: src/main/resources/public/js/angular/scraper/
+    name: scraper.module.js
+  - file:
+    path: src/main/resources/public/js/angular/scraper/
+    name: scraper.controller.js
+  - file:
+    path: src/main/resources/public/js/angular/scraper/
+    name: scraper.service.js
+  - file:
+    path: src/main/resources/templates/
+    name: login.html
+  - file:
+    path: src/main/resources/templates/fragments/
+    name: common.html
+  - file:
+    path: src/main/resources/templates/fragments/
+    name: angular-scripts.html
+  - file:
     path: src/main/resources/templates/user/
     name: user.html
+  - file:
+    path: src/main/resources/templates/scraper/
+    name: scraper.html
+  - file:
+    path: src/main/resources/public/css/
+    name: main.css
   - file:
     path: src/main/resources/
     name: bootstrap.yml
