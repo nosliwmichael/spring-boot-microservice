@@ -2,7 +2,7 @@ package com.aperture.validator.validators;
 
 import java.util.Collection;
 
-public interface ListValidator {
+public interface CollectionValidator {
 
     static boolean doesContain(Collection<?> source, Object reference) {
         if (BasicValidator.isNotNull(source)) {
