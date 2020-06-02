@@ -2,61 +2,142 @@
 
     // PUBLIC METHODS //
     codefy.modalInit = init;
-    codefy.openModal = openModal;
-    codefy.closeModal = closeModal;
+    codefy.openModalEvent = openModalEvent;
+    codefy.closeModalEvent = closeModalEvent;
 
     // PRIVATE PROPERTIES //
     let modalBackdrop;
-    let codeContent;
     let modalCloseButton;
+    let codeContainer;
+    let codeContent;
+    let codeLinks;
+    let selectedFileIndex;
+    let modalOpen;
+    let touchPos;
 
     // SELF INITIALIZE //
     init();
 
     function init() {
-        modalBackdrop = document.getElementById('modalBackdrop');
-        codeContent = document.getElementById('codeContent');
-        modalCloseButton = document.getElementById('modalCloseButton');
-        let codeLinks = document.getElementsByClassName('code-link');
+        selectedFileIndex = 0;
+        modalOpen = false;
+        touchPos = { x: 0, y: 0 };
 
-        modalBackdrop.onclick = closeModal;
-        modalCloseButton.onclick = closeModal;
+        modalBackdrop = document.getElementById('modalBackdrop');
+        modalCloseButton = document.getElementById('modalCloseButton');
+        codeContainer = document.getElementById('codeContainer');
+        codeContent = document.getElementById('codeContent');
+        codeLinks = Array.from(document.getElementsByClassName('code-link'));
+
+        modalBackdrop.onclick = closeModalEvent;
+        modalCloseButton.onclick = closeModalEvent;
+        document.onkeyup = keyEvent;
+        modalBackdrop.ontouchstart = touchStartEvent;
+        modalBackdrop.ontouchend = touchEndEvent;
         
-        Array.from(codeLinks).forEach(codeLink => {
-            codeLink.onclick = openModal;
+        codeLinks.forEach(codeLink => {
+            codeLink.onclick = openModalEvent;
         })
     }
 
-    /**
-     * Open modal.
-     * Load content.
-     * @param {Event} event
-     */
-    function openModal(event) {
-        modalBackdrop.style.display = 'block';
-        let fileUrl = event.target.href;
-        let fileName = event.target.innerText;
+    /* EVENT HANDLERS */
+
+    function openModalEvent(event) {
+        event.preventDefault();
+        selectedFileIndex = codeLinks.indexOf(event.target);
+        openModal(selectedFileIndex);
+    }
+
+    function closeModalEvent(event) {
+        if (event.target == modalBackdrop ||
+            event.target == modalCloseButton) {
+            closeModal();
+        }
+    }
+
+    function keyEvent(event) {
+        event = event || window.event;
+        if (event.keyCode == '27') {
+            closeModal();
+        }
+        else if (event.keyCode == '37') {
+            previousModal();
+        } else if (event.keyCode == '39') {
+            nextModal();
+        }
+    }
+
+    function touchStartEvent(event) {
+        if (modalOpen && !event.path.includes(codeContainer)) {
+            touchPos.x = event.touches[0].clientX;
+            touchPos.y = event.touches[0].clientY;
+        }
+    }
+
+    function touchEndEvent(event) {
+        if (modalOpen && !event.path.includes(codeContainer)) {
+            let xDiff = touchPos.x - event.changedTouches[0].clientX;
+            let yDiff = touchPos.y - event.changedTouches[0].clientY;
+            if (Math.abs(xDiff) > Math.abs(yDiff)) {
+                if (xDiff > 0) {
+                    previousModal();
+                } else {
+                    nextModal();
+                }
+            }
+        }
+    }
+
+    /* PRIVATE METHODS */
+
+    function openModal(index) {
+        let fileUrl = codeLinks[index].href;
+        let fileName = codeLinks[index].innerText;
         codefy.sourceData(fileUrl)
         .then((response) => {
             codefy.populateContainer(response, codeContent);
             codeContent.className = `language-${getFileExtension(fileUrl)}`;
             document.getElementById('modalHeader').innerText = fileName;
+            modalBackdrop.style.display = 'block';
+            modalOpen = true;
             Prism.highlightElement(codeContent);
         })
         .catch(console.error);
-        event.preventDefault();
+    }
+
+    /**
+     * Hide modal.
+     * Clear content.
+     */
+    function closeModal() {
+        modalBackdrop.style.display = 'none';
+        codeContent.innerText = '';
+        modalOpen = false;
     }
 
     /**
      * Close modal.
-     * Clear content.
-     * @param {Event} event
+     * Decrement selected index.
+     * Open modal.
      */
-    function closeModal(event) {
-        if (event.target == modalBackdrop ||
-            event.target == modalCloseButton) {
-            modalBackdrop.style.display = 'none';
-            codeContent.innerText = '';
+    function previousModal() {
+        closeModal();
+        if (selectedFileIndex > 0) {
+            selectedFileIndex--;
+            openModal(selectedFileIndex);
+        }
+    }
+
+    /**
+     * Close modal.
+     * Increment selected index.
+     * Open modal.
+     */
+    function nextModal() {
+        closeModal();
+        if (selectedFileIndex < codeLinks.length - 1) {
+            selectedFileIndex++;
+            openModal(selectedFileIndex);
         }
     }
 
