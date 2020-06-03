@@ -9,7 +9,7 @@
     function EndpointService() {
 
         /* BASE URLS */
-        let BASE_URL = '/aperture';
+        let BASE_URL = '/web-app';
         let USER_BASE_ENDPOINT = BASE_URL + '/user';
         let SCRAPER_BASE_ENDPOINT = BASE_URL + '/scraper';
 

@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>com.aperture</groupId>
+		<groupId>com.sbm</groupId>
 		<artifactId>parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath>../parent/pom.xml</relativePath>
@@ -23,12 +23,12 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>com.aperture</groupId>
+				<groupId>com.sbm</groupId>
 				<artifactId>base-client</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 			<dependency>
-				<groupId>com.aperture</groupId>
+				<groupId>com.sbm</groupId>
 				<artifactId>base-provider</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>

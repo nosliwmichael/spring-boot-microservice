@@ -6,7 +6,7 @@
 
     <parent>
         <artifactId>scraper</artifactId>
-        <groupId>com.aperture</groupId>
+        <groupId>com.sbm</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
@@ -14,19 +14,19 @@
     <name>scraper-provider</name>
 
     <dependencies>
-        <!-- APERTURE -->
+        <!-- SBM -->
         <dependency>
-            <groupId>com.aperture</groupId>
+            <groupId>com.sbm</groupId>
             <artifactId>scraper-api</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>com.aperture</groupId>
+            <groupId>com.sbm</groupId>
             <artifactId>base-provider</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>com.aperture</groupId>
+            <groupId>com.sbm</groupId>
             <artifactId>validator</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>

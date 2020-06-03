@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>com.aperture</groupId>
+		<groupId>com.sbm</groupId>
 		<artifactId>parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath>../parent/pom.xml</relativePath>
@@ -20,15 +20,15 @@
 	</properties>
 
 	<dependencies>
-		<!-- APERTURE -->
+		<!-- SBM -->
 		<dependency>
-			<groupId>com.aperture</groupId>
+			<groupId>com.sbm</groupId>
 			<artifactId>user-client</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>
-			<groupId>com.aperture</groupId>
+			<groupId>com.sbm</groupId>
 			<artifactId>scraper-client</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
@@ -48,7 +48,6 @@
 			<groupId>org.thymeleaf.extras</groupId>
 			<artifactId>thymeleaf-extras-springsecurity5</artifactId>
 		</dependency>
-
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -91,6 +90,7 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>

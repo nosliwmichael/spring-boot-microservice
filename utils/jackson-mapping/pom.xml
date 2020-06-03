@@ -6,7 +6,7 @@
 
     <parent>
         <artifactId>utils</artifactId>
-        <groupId>com.aperture</groupId>
+        <groupId>com.sbm</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
