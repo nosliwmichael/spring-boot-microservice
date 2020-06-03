@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Aperture
+title: Spring Boot Microservice
 display_name: Web-App
 level: top
 app_path: web-app/
@@ -8,28 +8,28 @@ files:
   - file:
     name: pom.xml
   - file:
-    path: src/main/java/com/aperture/webapp/
+    path: src/main/java/com/sbm/webapp/
     name: ServletInitializer.java
   - file:
-    path: src/main/java/com/aperture/webapp/
+    path: src/main/java/com/sbm/webapp/
     name: WebAppApplication.java
   - file:
-    path: src/main/java/com/aperture/webapp/config/
+    path: src/main/java/com/sbm/webapp/config/
     name: WebConfig.java
   - file:
-    path: src/main/java/com/aperture/webapp/config/
+    path: src/main/java/com/sbm/webapp/config/
     name: WebSecurityConfig.java
   - file:
-    path: src/main/java/com/aperture/webapp/controller/
+    path: src/main/java/com/sbm/webapp/controller/
     name: BaseController.java
   - file:
-    path: src/main/java/com/aperture/webapp/controller/
+    path: src/main/java/com/sbm/webapp/controller/
     name: MainController.java
   - file:
-    path: src/main/java/com/aperture/webapp/controller/
+    path: src/main/java/com/sbm/webapp/controller/
     name: UserController.java
   - file:
-    path: src/main/java/com/aperture/webapp/controller/
+    path: src/main/java/com/sbm/webapp/controller/
     name: ScraperController.java
   - file:
     path: src/main/resources/public/js/angular/common/

@@ -14,11 +14,11 @@
 
 {% for file in page.files %}
 {% if file.path %}
-<a class="code-link" href="{{ site.aperture.raw-url | append: site.aperture.branch }}/{{ page.app_path | append: file.path | append: file.name }}">
+<a class="code-link" href="{{ site.repo.raw-url | append: site.repo.branch }}/{{ page.app_path | append: file.path | append: file.name }}">
     {{ file.name }}
 </a>
 {% else %}
-<a class="code-link" href="{{ site.aperture.raw-url | append: site.aperture.branch }}/{{ page.app_path | append: file.name }}">
+<a class="code-link" href="{{ site.repo.raw-url | append: site.repo.branch }}/{{ page.app_path | append: file.name }}">
     {{ file.name }}
 </a>
 {% endif %}

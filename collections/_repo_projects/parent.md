@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Aperture
+title: Spring Boot Microservice
 display_name: Parent
 level: top
 app_path: parent/

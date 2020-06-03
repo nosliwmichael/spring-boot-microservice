@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Aperture
+title: Spring Boot Microservice
 display_name: Getting Started
 permalink: /getting-started
 ---

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Aperture
+title: Spring Boot Microservice
 display_name: Getting Started With IntelliJ
 permalink: /getting-started/intellij
 ---
@@ -23,25 +23,25 @@ With the way IntelliJ treats Projects and Modules, you can go about setting up y
 
 If you only intend to work with this single repository, then the go with the first option. If you want the flexibility of being able to include other projects from other repositories, go with the second option. As you'll see in the next section, **Configuration Repository**, I'll be interacting with a separate repository for my configuration files. With this in mind, I'll briefly go over option 2.
 
-Select `Create New Project` from the main splash menu and create an empty project. Name it something that doesn't conflict with the repository, like, `aperture-project`.
+Select `Create New Project` from the main splash menu and create an empty project. Name it something that doesn't conflict with the repository, like, `spring-boot-microservice-project`.
 
 ![New IntelliJ Project]({{ '/images/new-project-intellij.PNG' | relative_url }})
 
-Next you'll want to clone the aperture repository inside of the new project you've created. `https://github.com/nosliwmichael/aperture.git` 
+Next you'll want to clone the Spring Boot Microservice repository inside of the new project you've created. `https://github.com/nosliwmichael/spring-boot-microservice.git` 
 
 ![Clone Repository Window]({{ '/images/clone-repo-intellij.PNG' | relative_url }})
 
-Click cancel on the popup that appears asking you if you want to open the project in a new window or the existing one. Then repeat the same steps for the aperture-config repository. `https://github.com/nosliwmichael/aperture-config.git` Once that's complete you should have a project structure similar to this:
+Click cancel on the popup that appears asking you if you want to open the project in a new window or the existing one. Then repeat the same steps for the spring-boot-microservice-config repository. `https://github.com/nosliwmichael/spring-boot-microservice-config.git` Once that's complete you should have a project structure similar to this:
 
 ![IntelliJ Project Structure]({{ '/images/project-structure-intellij.PNG' | relative_url }})
 
 ## Installation
 
-IntelliJ makes installing Maven projects very simple. In the Project explorer panel, navigate to **aperture** -> **parent**, right click on the **pom.xml** and select "Add as Maven project". A Maven panel should appear on the right side of the window with all of the sub-modules. From here we can go into **parent** -> **Lifecycle** and select **install**. Since every project is a descendant of parent, they will all be installed from this single run configuration.
+IntelliJ makes installing Maven projects very simple. In the Project explorer panel, navigate to the **parent** module, right click on the **pom.xml** and select "Add as Maven project". A Maven panel should appear on the right side of the window with all of the sub-modules. From here we can go into **parent** -> **Lifecycle** and select **install**. Since every project is a descendant of parent, they will all be installed from this single run configuration.
 
 ## Configuration Repository
 
-Before we move onto running the application, I want to explain the purpose of the `aperture-config` repository. This repo only contains .yml property files. This is the location that the config service pulls and shares configuration properties from. When it comes to setting up the config service, you don't *have* to keep your property files in a separate repository. You could store them in the resources folder in the config module or you could put them in their own folder within the same repository as the other aperture projects. In fact, you don't even need to clone this repository at all. If you have no intention of changing any of the configuration files, you could simply point your config service directly to the GitHub repository. In any case, this article is going to assume you'll use the provided config repository for your property files.
+Before we move onto running the application, I want to explain the purpose of the `spring-boot-microservice-config` repository. This repo only contains .yml property files. This is the location that the config service pulls and shares configuration properties from. When it comes to setting up the config service, you don't *have* to keep your property files in a separate repository. You could store them in the resources folder in the config module or you could put them in their own folder within the same repository as the other Spring Boot Microservice projects. In fact, you don't even need to clone this repository at all. If you have no intention of changing any of the configuration files, you could simply point your config service directly to the GitHub repository. In any case, this article is going to assume you'll use the provided config repository for your property files.
 
 ## Running The Apps
 
@@ -62,7 +62,7 @@ The easiest way to create an Application run configuration is to right click on 
 
 ```
 -DlocalConfigRepo={PATH_TO_LOCAL_CONFIG_FILES}
--DremoteConfigRepo=https://github.com/nosliwmichael/aperture-config
+-DremoteConfigRepo=https://github.com/nosliwmichael/spring-boot-microservice-config
 -DrepoUsername=username
 -DrepoPassword=password
 -Dspring.profiles.active=dev

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Aperture
+title: Spring Boot Microservice
 display_name: Getting Started With Eclipse
 permalink: /getting-started/eclipse
 ---
@@ -22,7 +22,7 @@ start by cloning the repository to your local workspace.
 For me this will be in my `D:/eclipse-workspaces` folder.
 You should have something like this:
 
-![Aperture Project Structure]({{ '/images/project-structure-eclipse.PNG' | relative_url }})
+![Project Structure]({{ '/images/project-structure-eclipse.PNG' | relative_url }})
 
 You only need to create a Maven install run configuration for the parent project. This is because the parent pom contains each top-level project as a sub-module. By installing the parent project, you are installing the projects in the following order: 
 - parent
@@ -44,7 +44,7 @@ If you choose to install them one by one, remember to follow the installation or
 
 ## Configuration Repository
 
-Before you can run the apps, there is one more dependency we should cover, the [aperture-confi repository](https://github.com/nosliwmichael/aperture-config). This repository only contains .yml property files. This is the location that the config service pulls and shares configuration properties from. When it comes to setting up the config service, you don't *have* to keep your property files in a separate repository. You could store them in the resources folder in the config project or you could put them in their own folder within the same repository as the other aperture projects. In any case, this article is going to assume you'll use the provided config repository for your property files.
+Before you can run the apps, there is one more dependency we should cover, the [spring-boot-microservice-config repository](https://github.com/nosliwmichael/spring-boot-microservice-config). This repository only contains .yml property files. This is the location that the config service pulls and shares configuration properties from. When it comes to setting up the config service, you don't *have* to keep your property files in a separate repository. You could store them in the resources folder in the config project or you could put them in their own folder within the same repository as the other Spring Boot Microservice projects. In any case, this article is going to assume you'll use the provided config repository for your property files.
 
 ## Running The Apps
 
@@ -64,11 +64,11 @@ Another way is to setup remote debugging within your application. This is accomp
 
 To create a Java Application run configuration, go to your run configurations and select the ![Java Application Run Config Option]({{ '/images/java-application-run-config-option.PNG' | relative_url }}) option in the left panel. Then select the ![New Launch Configuration Button]({{ '/images/new-run-config-icon.PNG' | relative_url }}) button at the top. From here you should fill out the Name, Project, and Main Class fields. Here are a list of the main classes for each spring boot app:
 
-`com.aperture.config.ConfigApplication`
-`com.aperture.discovery.DiscoveryApplication`
-`com.aperture.gateway.GatewayApplication`
-`com.aperture.user.UserProviderApplication`
-`com.aperture.webapp.WebAppApplication`
+`com.sbm.config.ConfigApplication`
+`com.sbm.discovery.DiscoveryApplication`
+`com.sbm.gateway.GatewayApplication`
+`com.sbm.user.UserProviderApplication`
+`com.sbm.webapp.WebAppApplication`
 
 ![Java Run Config Main]({{ '/images/java-run-config-main.PNG' | relative_url }})
 
@@ -76,7 +76,7 @@ In addition to telling the IDE which apps to run, we need to provide arguments o
 
 ```
 -DlocalConfigRepo={PATH_TO_LOCAL_CONFIG_FILES}
--DremoteConfigRepo=https://github.com/nosliwmichael/aperture-config
+-DremoteConfigRepo=https://github.com/nosliwmichael/spring-boot-microservice-config
 -DrepoUsername=username
 -DrepoPassword=password
 -Dspring.profiles.active=dev

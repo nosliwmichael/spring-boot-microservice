@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Aperture
+title: Spring Boot Microservice
 display_name: Discovery
 level: top
 app_path: discovery/
@@ -8,7 +8,7 @@ files:
   - file:
     name: pom.xml
   - file:
-    path: src/main/java/com/aperture/discovery/
+    path: src/main/java/com/sbm/discovery/
     name: DiscoveryApplication.java
   - file:
     path: src/main/resources/

@@ -1,4 +1,4 @@
-title: Aperture
+title: Spring Boot Microservice
 description: A look at the microservice architecture
 theme: jekyll-theme-slate
 
@@ -10,6 +10,6 @@ collections:
   getting-started:
     output: true
     
-aperture:
-  raw-url: https://raw.githubusercontent.com/nosliwmichael/aperture/
+repo:
+  raw-url: https://raw.githubusercontent.com/nosliwmichael/spring-boot-microservice/
   branch: master
